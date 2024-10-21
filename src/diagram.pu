@@ -1,0 +1,71 @@
+@startuml
+abstract class Animal {
+    - String name
+    - String species
+    - String food
+    - int hunger
+    - int[2] location
+
+    + void setName(String name)
+    + String getName()
+    + void setSpecies(String species)
+    + String getSpecies()
+    + void setFood(String food)
+    + String getFood()
+    + void setHunger(int hunger)
+    + int getHunger()
+    + void setLocation(int[] location)
+    + int[] getLocation()
+    + void sleep()
+    + abstract void makeNoise()
+    + abstract void eat()
+    + void roam()
+}
+
+class Canine extends Animal {
+    + void roam()
+}
+
+class Feline extends Animal {
+    + void roam()
+}
+
+class Hippo extends Animal {
+    + void makeNoise()
+    + void eat()
+}
+
+class Lion extends Feline {
+    + void makeNoise()
+    + void eat()
+}
+
+class Tiger extends Feline {
+    + void makeNoise()
+    + void eat()
+}
+
+class Wolf extends Canine {
+    + void makeNoise()
+    + void eat()
+}
+
+interface Pet {
+    + void beFriendly()
+    + void play()
+}
+
+class Cat extends Feline implements Pet {
+    + void makeNoise()
+    + void eat()
+    + void beFriendly()
+    + void play()
+}
+
+class Dog extends Canine implements Pet {
+    + void makeNoise()
+    + void eat()
+    + void beFriendly()
+    + void play()
+}
+@enduml
